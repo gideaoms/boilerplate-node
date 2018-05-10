@@ -1,14 +1,14 @@
 {
   "name": "base-node",
   "version": "1.0.0",
-  "description": "A boilerplate for node with koa, gulp e nunjucks",
+  "description": "A boilerplate for node with express, gulp e nunjucks",
   "main": "server.js",
   "scripts": {
     "dev": "webpack --watch",
     "build": ""
   },
   "keywords": [
-    "koa",
+    "express",
     "gulp",
     "node",
     "nunjucks",
