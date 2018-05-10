@@ -1,8 +1,6 @@
 const path = require('path');
 const NodemonPlugin = require('nodemon-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const preCss = require('precss');
-const autoPrefixer = require('autoprefixer');
 
 module.exports = {
   entry: [
@@ -34,26 +32,13 @@ module.exports = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            {
-              loader: 'css-loader',
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins() {
-                  return [
-                    preCss,
-                    autoPrefixer,
-                  ];
-                },
-              },
-            },
-            {
-              loader: 'sass-loader',
-            },
+            'css-loader',
+            'postcss-loader',
+            'sass-loader',
           ],
         }),
       },
     ],
   },
+  devtool: 'source-map',
 };
